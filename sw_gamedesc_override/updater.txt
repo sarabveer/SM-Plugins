@@ -1,0 +1,19 @@
+"Updater"
+{
+	"Information"
+	{
+		"Version"
+		{
+			"Latest"	"1.0"
+		}
+		
+		"Notes"	"More info @ github.com/Sarabveer/SM-Plugins. Changes in 1.0:"
+		"Notes"	"Added Updater Support"
+	}
+	
+	"Files"
+	{
+		"Plugin"	"Path_SM/plugins/sw_gamedesc_override.smx"
+		"Source"	"Path_SM/scripting/sw_gamedesc_override.sp"
+	}
+}
