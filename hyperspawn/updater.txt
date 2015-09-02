@@ -1,0 +1,19 @@
+"Updater"
+{
+	"Information"
+	{
+		"Version"
+		{
+			"Latest"	"1.9.2"
+		}
+		
+		"Notes"	"More info @ github.com/Sarabveer/SM-Plugins. Changes in 1.9.2:"
+		"Notes"	"Fix SM 1.7.2 Compile Errors"
+	}
+	
+	"Files"
+	{
+		"Plugin"	"Path_SM/plugins/hyperspawn.smx"
+		"Source"	"Path_SM/scripting/hyperspawn.sp"
+	}
+}
