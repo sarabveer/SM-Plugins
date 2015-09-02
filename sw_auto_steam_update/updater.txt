@@ -1,0 +1,19 @@
+"Updater"
+{
+	"Information"
+	{
+		"Version"
+		{
+			"Latest"	"1.0"
+		}
+		
+		"Notes"	"More info @ github.com/Sarabveer/SM-Plugins. Changes in 1.0:"
+		"Notes"	"Added Updater Support"
+	}
+	
+	"Files"
+	{
+		"Plugin"	"Path_SM/plugins/auto_steam_update.smx"
+		"Source"	"Path_SM/scripting/auto_steam_update.sp"
+	}
+}
