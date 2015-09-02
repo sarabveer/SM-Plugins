@@ -17,6 +17,7 @@
 #undef REQUIRE_PLUGIN
 #tryinclude <updater>
 
+#define PLUGIN_VERSION  "1.9.2"
 #define UPDATE_URL    "https://raw.githubusercontent.com/Sarabveer/SM-Plugins/master/hyperspawn/updater.txt"
 
 public Plugin:myinfo =
@@ -24,7 +25,7 @@ public Plugin:myinfo =
 	name = "HyperSpawn Beta",
 	author = "PsychoNightmare, Sarabveer(VEER™)",
 	description ="Instant respawn with teleporting to random players",
-	version = "1.9.2",
+	version = PLUGIN_VERSION,
 	url = "http://steamcommunity.com/profiles/76561198002438403"
 }
 
@@ -39,6 +40,7 @@ new bool:canSpawn[MAXPLAYERS+1]
 
 public OnPluginStart()
 {
+	CreateConVar("sm_hyperspawn_version", PLUGIN_VERSION, "HyperSpawn Plugin Version", FCVAR_PLUGIN | FCVAR_SPONLY | FCVAR_NOTIFY | FCVAR_DONTRECORD);
 	hyperspawn = CreateConVar("hyperspawn","1","Enables instant player respawn [hyperspawn_time] second(s) after death.",FCVAR_PLUGIN,true,0.0,true,1.0)
 	hyperspawn_time = CreateConVar("hyperspawn_time","3","Set's how long a player needs to wait before respawning.",FCVAR_PLUGIN,true,0.1,true,5.0)
 	hyperspawn_teleport = CreateConVar("hyperspawn_teleport", "1", "Automatically teleports players to another player on respawn.", FCVAR_PLUGIN, true, 0.0, true, 1.0)
