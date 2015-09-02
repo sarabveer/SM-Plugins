@@ -1,0 +1,21 @@
+"Updater"
+{
+	"Information"
+	{
+		"Version"
+		{
+			"Latest"	"1.4"
+		}
+		
+		"Notes"	"More info @ github.com/Sarabveer/SM-Plugins Changes in 1.4:"
+		"Notes"	"New Updater Url"
+	}
+	
+	"Files"
+	{
+		"Plugin"	"Path_SM/plugins/donormenu.smx"
+		"Plugin"	"Path_SM/translations/donormenu.phrases.txt"
+
+		"Source"	"Path_SM/scripting/donormenu.sp"
+	}
+}

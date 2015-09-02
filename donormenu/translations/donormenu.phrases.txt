@@ -1,0 +1,20 @@
+﻿"Phrases"
+{
+	"welcome message"
+	{
+		"#format"	""
+		"en"		"\x04[SM] \x01For the Donor Menu, type \x04!donor\x01 in chat! \x04[Donor's Only]"
+	}
+	
+	"menu title"
+	{
+		"#format"	""
+		"en"		"Donor Menu"
+	}
+	
+	"online admins menu title"
+	{
+		"#format"	""
+		"en"		"Online Admins"
+	}
+}
