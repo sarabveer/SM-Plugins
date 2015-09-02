@@ -1,0 +1,19 @@
+"Updater"
+{
+	"Information"
+	{
+		"Version"
+		{
+			"Latest"	"1.5.2"
+		}
+		
+		"Notes"	"More info @ github.com/Sarabveer/SM-Plugins. Changes in 1.5.2:"
+		"Notes"	"Added Updater Support"
+	}
+	
+	"Files"
+	{
+		"Plugin"	"Path_SM/plugins/spawnvehicle.smx"
+		"Source"	"Path_SM/scripting/spawnvehicle.sp"
+	}
+}
