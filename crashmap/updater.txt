@@ -1,0 +1,19 @@
+"Updater"
+{
+	"Information"
+	{
+		"Version"
+		{
+			"Latest"	"0.2"
+		}
+		
+		"Notes"	"More info @ github.com/Sarabveer/SM-Plugins. Changes in 0.2:"
+		"Notes"	"Added Updater Support"
+	}
+	
+	"Files"
+	{
+		"Plugin"	"Path_SM/plugins/crashmap.smx"
+		"Source"	"Path_SM/scripting/crashmap.sp"
+	}
+}
