@@ -1,4 +1,4 @@
-//  Automatic Steam Update (SteamWorks) (C) 2014 Sarabveer Singh <sarabveer@sarabveer.me>
+//  Automatic Steam Update (SteamWorks) (C) 2014-2014 Sarabveer Singh <me@sarabveer.me>
 //  
 //  Automatic Steam Update (SteamWorks) is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 //  You should have received a copy of the GNU General Public License
 //  along with Automatic Steam Update (SteamWorks). If not, see <http://www.gnu.org/licenses/>.
 //
-//  This file incorporates work covered by the following copyright(s):   
+//  This file is based off work(s) covered by the following copyright(s):   
 //
 //   [TF2] Automatic Steam Update
 //   Copyright (C) 2011-2012 Dr. McKay
@@ -30,7 +30,7 @@
 #tryinclude <updater>
 
 #define UPDATE_URL    "https://raw.githubusercontent.com/Sarabveer/SM-Plugins/master/sw_auto_steam_update/updater.txt"
-#define PLUGIN_VERSION "1.0"
+#define PLUGIN_VERSION "1.1"
 
 #define ALERT_SOUND "ui/system_message_alert.wav"
 

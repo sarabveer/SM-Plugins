@@ -1,4 +1,4 @@
-//  Donor Menu (C) 2014 Sarabveer Singh <sarabveer@sarabveer.me>
+//  Donor Menu (C) 2014-2016 Sarabveer Singh <me@sarabveer.me>
 //  
 //  Donor Menu is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@
 #undef REQUIRE_PLUGIN
 #include <updater>
 
-#define PLUGIN_VERSION "1.4"
+#define PLUGIN_VERSION "1.5"
 #define UPDATE_URL    "https://raw.githubusercontent.com/Sarabveer/SM-Plugins/master/donormenu/updater.txt"
 
 enum ChatCommand {
@@ -67,9 +67,9 @@ public Plugin:myinfo =
 }
 
 public OnPluginStart() {
-	CreateConVar("sm_donormenu_version", PLUGIN_VERSION, "Donor menu version", FCVAR_PLUGIN|FCVAR_SPONLY|FCVAR_REPLICATED|FCVAR_NOTIFY);
-	g_cvarWelcome = CreateConVar("sm_donormenu_welcome", "0", "Show welcome message to newly connected users.", FCVAR_PLUGIN);
-	g_cvarAdmins = CreateConVar("sm_donormenu_admins", "0", "Show a list of online admins in the menu.", FCVAR_PLUGIN);
+	CreateConVar("sm_donormenu_version", PLUGIN_VERSION, "Donor menu version", FCVAR_SPONLY|FCVAR_REPLICATED|FCVAR_NOTIFY);
+	g_cvarWelcome = CreateConVar("sm_donormenu_welcome", "0", "Show welcome message to newly connected users.", _);
+	g_cvarAdmins = CreateConVar("sm_donormenu_admins", "0", "Show a list of online admins in the menu.", _);
 	RegAdminCmd("sm_donor", Command_DonorMenu, ADMFLAG_KICK, "Display the Donor menu.");
 	
 	new String:hc[PLATFORM_MAX_PATH];

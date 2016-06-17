@@ -1,4 +1,4 @@
-//  SteamWorks Game Description Override (C) 2014 Sarabveer Singh <sarabveer@sarabveer.me>
+//  SteamWorks Game Description Override (C) 2014-2016 Sarabveer Singh <me@sarabveer.me>
 //  
 //  SteamWorks Game Description Override is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 //  You should have received a copy of the GNU General Public License
 //  along with SteamWorks Game Description Override. If not, see <http://www.gnu.org/licenses/>.
 //
-//  This file incorporates work covered by the following copyright(s):   
+//  This file is based off work(s) covered by the following copyright(s):   
 //
 //   SteamTools Game Description Override
 //   Copyright (C) 2011-2012 Dr. McKay
@@ -29,7 +29,7 @@
 #include <updater>
 
 #define UPDATE_URL    "https://raw.githubusercontent.com/Sarabveer/SM-Plugins/master/sw_gamedesc_override/updater.txt"
-#define PLUGIN_VERSION "1.0"
+#define PLUGIN_VERSION "1.1"
 
 new Handle:descriptionCvar = INVALID_HANDLE;
 new Handle:updaterCvar = INVALID_HANDLE;

@@ -4,11 +4,11 @@
 	{
 		"Version"
 		{
-			"Latest"	"1.5.2"
+			"Latest"	"1.5.3"
 		}
 		
-		"Notes"	"More info @ github.com/Sarabveer/SM-Plugins. Changes in 1.5.2:"
-		"Notes"	"Added Updater Support"
+		"Notes"	"More info @ github.com/Sarabveer/SM-Plugins. Changes in 1.5.3:"
+		"Notes"	"Recompiled with SM1.9-dev+5921"
 	}
 	
 	"Files"

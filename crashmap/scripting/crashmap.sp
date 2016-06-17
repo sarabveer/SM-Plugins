@@ -1,4 +1,4 @@
-//  CrashMap (C) 2014 Sarabveer Singh <sarabveer@sarabveer.me>
+//  CrashMap (C) 2014-2016 Sarabveer Singh <me@sarabveer.me>
 //  
 //  CrashMap is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
 
 #define UPDATE_URL    "https://raw.githubusercontent.com/Sarabveer/SM-Plugins/master/crashmap/updater.txt"
 
-#define PLUGIN_VERSION "0.2"
+#define PLUGIN_VERSION "0.3"
 
 public Plugin:myinfo = 
 {
@@ -33,7 +33,7 @@ new Handle:g_hStatement;
 
 public OnPluginStart()
 {
-	CreateConVar("sm_crashedmap_version", PLUGIN_VERSION, "CrashMap Plugin Version", FCVAR_PLUGIN | FCVAR_SPONLY | FCVAR_NOTIFY | FCVAR_DONTRECORD);
+	CreateConVar("sm_crashedmap_version", PLUGIN_VERSION, "CrashMap Plugin Version", FCVAR_SPONLY | FCVAR_NOTIFY | FCVAR_DONTRECORD);
 	SQL_TConnect(TConnect, "storage-local");
 	
 	if (LibraryExists("updater"))

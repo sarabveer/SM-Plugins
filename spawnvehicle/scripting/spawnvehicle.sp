@@ -1,4 +1,4 @@
-//  Spawn a Vehicle (C) 2009 Jonah Hirsch
+//  Spawn a Vehicle (C) 2009 Jonah Hirsch, 2014-2016 Sarabveer Singh <me@sarabveer.me>
 //  
 //  Spawn a Vehicle is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
 #include <sdktools>
 #tryinclude <updater>
 
-#define PLUGIN_VERSION "1.5.2"
+#define PLUGIN_VERSION "1.5.3"
 #define UPDATE_URL    "https://raw.githubusercontent.com/Sarabveer/SM-Plugins/master/spawnvehicle/updater.txt"
 
 new String:spawncommand[128]

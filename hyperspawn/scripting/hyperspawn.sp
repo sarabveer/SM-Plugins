@@ -1,4 +1,4 @@
-//  This plugin is part of the PsychoProject
+//	HyperSpawn Beta (C) 2014 PsychoProject, 2014-2016 Sarabveer Singh <me@sarabveer.me>
 //  
 //  HyperSpawn Beta is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
 #undef REQUIRE_PLUGIN
 #tryinclude <updater>
 
-#define PLUGIN_VERSION  "1.9.2"
+#define PLUGIN_VERSION  "1.9.3"
 #define UPDATE_URL    "https://raw.githubusercontent.com/Sarabveer/SM-Plugins/master/hyperspawn/updater.txt"
 
 public Plugin:myinfo =
@@ -40,13 +40,13 @@ new bool:canSpawn[MAXPLAYERS+1]
 
 public OnPluginStart()
 {
-	CreateConVar("sm_hyperspawn_version", PLUGIN_VERSION, "HyperSpawn Plugin Version", FCVAR_PLUGIN | FCVAR_SPONLY | FCVAR_NOTIFY | FCVAR_DONTRECORD);
-	hyperspawn = CreateConVar("hyperspawn","1","Enables instant player respawn [hyperspawn_time] second(s) after death.",FCVAR_PLUGIN,true,0.0,true,1.0)
-	hyperspawn_time = CreateConVar("hyperspawn_time","3","Set's how long a player needs to wait before respawning.",FCVAR_PLUGIN,true,0.1,true,5.0)
-	hyperspawn_teleport = CreateConVar("hyperspawn_teleport", "1", "Automatically teleports players to another player on respawn.", FCVAR_PLUGIN, true, 0.0, true, 1.0)
-	hyperspawn_carcheck = CreateConVar("hyperspawn_carcheck", "1", "Checks if the client is in a car, and denies teleporting if they are.", FCVAR_PLUGIN, true, 0.0, true, 1.0)
-	hyperspawn_duckcheck = CreateConVar("hyperspawn_duckcheck", "0", "Checks if the client is ducked, and denies teleporting if they are.(only use if needed)", FCVAR_PLUGIN, true, 0.0, true, 1.0)
-	hyperspawn_mustbealive = CreateConVar("hyperspawn_one_alive", "0", "Requires a single player to be alive to allow respawning", FCVAR_PLUGIN, true, 0.0 ,true, 1.0)
+	CreateConVar("sm_hyperspawn_version", PLUGIN_VERSION, "HyperSpawn Plugin Version", FCVAR_SPONLY | FCVAR_NOTIFY | FCVAR_DONTRECORD);
+	hyperspawn = CreateConVar("hyperspawn","1","Enables instant player respawn [hyperspawn_time] second(s) after death.",_,true,0.0,true,1.0)
+	hyperspawn_time = CreateConVar("hyperspawn_time","3","Set's how long a player needs to wait before respawning.",_,true,0.1,true,5.0)
+	hyperspawn_teleport = CreateConVar("hyperspawn_teleport", "1", "Automatically teleports players to another player on respawn.", _, true, 0.0, true, 1.0)
+	hyperspawn_carcheck = CreateConVar("hyperspawn_carcheck", "1", "Checks if the client is in a car, and denies teleporting if they are.", _, true, 0.0, true, 1.0)
+	hyperspawn_duckcheck = CreateConVar("hyperspawn_duckcheck", "0", "Checks if the client is ducked, and denies teleporting if they are.(only use if needed)", _, true, 0.0, true, 1.0)
+	hyperspawn_mustbealive = CreateConVar("hyperspawn_one_alive", "0", "Requires a single player to be alive to allow respawning", _, true, 0.0 ,true, 1.0)
 	AutoExecConfig(true)
 	HookEvent("player_death", Event_Death)
 	HookEvent("player_spawn", Event_Spawn)
