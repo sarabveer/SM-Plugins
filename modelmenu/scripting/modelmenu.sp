@@ -23,7 +23,7 @@ public Plugin:myinfo =
 	name = "Model Menu",
 	author = "Sarabveer(VEER™)",
 	description = "Simple Model Menu",
-	version = "0.3",
+	version = "0.4",
 	url = "https://www.sarabveer.me"
 }
 
@@ -37,7 +37,7 @@ public OnPluginStart()
 
 	if(!FileExists(file))
 	{
-		SetFailState("No file - %s", file);
+		SetFailState("[ModelMenu] Unable to Load File: %s", file);
 	}
 
 	model_name = CreateArray(ByteCountToCells(MAX_NAME_LENGTH));
@@ -47,7 +47,7 @@ public OnPluginStart()
 	SMC_SetReaders(smc, ns, kv, es);
 	SMC_ParseFile(smc, file);
 
-	RegConsoleCmd("sm_models", test);
+	RegConsoleCmd("sm_models", modelmenu);
 	
 	if (LibraryExists("updater"))
     {
@@ -72,12 +72,12 @@ public SMCResult:kv(Handle:smc, const String:key[], const String:value[], bool:k
 	{
 		PushArrayString(model_name, key);
 		PushArrayString(model_path, value);
-		PrintToServer("%s %s", key, value)
+		//PrintToServer("%s %s", key, value)
 	}
 }
 public SMCResult:es(Handle:smc){}
 
-public Action:test(client, args)
+public Action:modelmenu(client, args)
 {
 
 	new Handle:menu = CreateMenu(menu_handler);
@@ -98,7 +98,7 @@ public Action:test(client, args)
 	return Plugin_Handled;
 }
 
-public menu_handler(Handle:menu, MenuAction:action, param1, param2)
+public menu_handler(Handle:menu, MenuAction:action, client, modelt)
 {
 	switch(action)
 	{
@@ -108,12 +108,12 @@ public menu_handler(Handle:menu, MenuAction:action, param1, param2)
 		}
 		case MenuAction_Select:
 		{
-			new String:infoBuf[PLATFORM_MAX_PATH];
-			GetMenuItem(menu, param2, infoBuf, sizeof(infoBuf));
-			PrecacheModel(infoBuf);
-			SetEntityModel(param1, infoBuf);
-
-			test(param1, 0);
+			new String:model[PLATFORM_MAX_PATH];
+			GetMenuItem(menu, modelt, model, sizeof(model));
+			PrecacheModel(model);
+			SetEntityModel(client, model);
+			ClientCommand(client, "cl_playermodel %s", model);
+			modelmenu(client, 0);
 		}
 	}
 }
