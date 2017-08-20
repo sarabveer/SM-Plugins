@@ -7,7 +7,7 @@
 			"Latest"	"0.4"
 		}
 		
-		"Notes"	"More info @ github.com/Sarabveer/SM-Plugins. Changes in 0.3:"
+		"Notes"	"More info @ github.com/Sarabveer/SM-Plugins. Changes in 0.4:"
 		"Notes"	"Allow Plugin to Work Without Updater.smx"
 	}
 	
