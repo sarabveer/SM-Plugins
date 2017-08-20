@@ -14,9 +14,12 @@
 
 #include <sourcemod>
 #include <sdktools>
-#tryinclude <updater>
 
-#define PLUGIN_VERSION "1.5.3"
+#undef REQUIRE_PLUGIN
+#include <updater>
+#define REQUIRE_PLUGIN
+
+#define PLUGIN_VERSION "1.5.4"
 #define UPDATE_URL    "https://raw.githubusercontent.com/Sarabveer/SM-Plugins/master/spawnvehicle/updater.txt"
 
 new String:spawncommand[128]
@@ -34,11 +37,11 @@ public Plugin:myinfo =
 
 public OnPluginStart(){
 	RegConsoleCmd("sm_spawnvehicle", Command_SpawnVehicle, "spawn a vehicle")
-
+	
 	if (LibraryExists("updater"))
-    {
-        Updater_AddPlugin(UPDATE_URL)
-    }
+	{
+		Updater_AddPlugin(UPDATE_URL)
+	}
 }
 
 public OnLibraryAdded(const String:name[])
@@ -70,6 +73,12 @@ public Action:Command_SpawnVehicle(client, args){
 		commandFlag = GetCommandFlags(spawncommand)
 		SetCommandFlags(spawncommand, (commandFlag & ~FCVAR_CHEAT))
 		Format(command, sizeof(command),"sm_fexec \"%s\" \"ch_createvehicle prop_vehicle_jeep models/vehicles/buggy_p2.mdl scripts/vehicles/jeep_test.txt\"", name)
+	}
+	if (strcmp(vehicle, "jeep_elite") == 0){
+		spawncommand = "ch_createvehicle"
+		commandFlag = GetCommandFlags(spawncommand)
+	   	SetCommandFlags(spawncommand, (commandFlag & ~FCVAR_CHEAT))
+		Format(command, sizeof(command),"sm_fexec \"%s\" \"ch_createvehicle prop_vehicle_mp models/vehicles/buggy_elite.mdl scripts/vehicles/jeep_elite.txt\"", name)
 	}
 	if (strcmp(vehicle, "airboat") == 0){
 		spawncommand = "ch_createairboat"
