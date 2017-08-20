@@ -14,7 +14,10 @@
 
 #include <sourcemod>
 #include <sdktools>
-#tryinclude <updater>
+
+#undef REQUIRE_PLUGIN
+#include <updater>
+#define REQUIRE_PLUGIN
 
 #define UPDATE_URL    "https://raw.githubusercontent.com/Sarabveer/SM-Plugins/master/modelmenu/updater.txt"
 
