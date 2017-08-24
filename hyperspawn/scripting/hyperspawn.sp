@@ -37,6 +37,8 @@ new Handle:hyperspawn_duckcheck
 new Handle:hyperspawn_mustbealive
 new bool:canSpawn[MAXPLAYERS+1]
 
+Handle equiparr = INVALID_HANDLE;
+
 
 public OnPluginStart()
 {
@@ -50,6 +52,7 @@ public OnPluginStart()
 	AutoExecConfig(true)
 	HookEvent("player_death", Event_Death)
 	HookEvent("player_spawn", Event_Spawn)
+	equiparr = CreateArray(32);
 	
 	if (LibraryExists("updater"))
     {
@@ -85,7 +88,8 @@ public Action:OnPlayerRunCmd(client, &Buttons, &impulse, Float:vel[3], Float:ang
 			else
 			{
 				RapidSpawn(client)
-			}
+
+}
 		}
 	}	
 	return Plugin_Continue
@@ -130,8 +134,26 @@ Hyperspawn(client)
 		new Float:origin[3]
 		GetEntPropVector(target, Prop_Send, "m_vecOrigin", origin)
 		TeleportEntity(client, origin, NULL_VECTOR, NULL_VECTOR)
+		findent(MaxClients+1,"info_player_equip");
+		for (int j; j<GetArraySize(equiparr); j++)
+		{
+			int jtmp = GetArrayCell(equiparr, j);
+			if (IsValidEntity(jtmp))
+				AcceptEntityInput(jtmp,"EquipPlayer",client);
+		}
+		ClearArray(equiparr);
 	}
 	return
+}
+
+findent(int ent, char[] clsname)
+{
+	int thisent = FindEntityByClassname(ent,clsname);
+	if ((IsValidEntity(thisent)) && (thisent >= MaxClients+1) && (thisent != -1))
+	{
+		PushArrayCell(equiparr,ent);
+		findent(thisent++,clsname);
+	}
 }
 
 RapidSpawn(client)
