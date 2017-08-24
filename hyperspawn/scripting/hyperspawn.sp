@@ -15,9 +15,10 @@
 #include <sourcemod>
 #include <sdktools>
 #undef REQUIRE_PLUGIN
-#tryinclude <updater>
+#include <updater>
+#define REQUIRE_PLUGIN
 
-#define PLUGIN_VERSION  "1.9.3"
+#define PLUGIN_VERSION  "1.9.4"
 #define UPDATE_URL    "https://raw.githubusercontent.com/Sarabveer/SM-Plugins/master/hyperspawn/updater.txt"
 
 public Plugin:myinfo =
@@ -36,8 +37,7 @@ new Handle:hyperspawn_carcheck
 new Handle:hyperspawn_duckcheck
 new Handle:hyperspawn_mustbealive
 new bool:canSpawn[MAXPLAYERS+1]
-
-Handle equiparr = INVALID_HANDLE;
+new Handle:equiparr
 
 
 public OnPluginStart()
@@ -52,7 +52,7 @@ public OnPluginStart()
 	AutoExecConfig(true)
 	HookEvent("player_death", Event_Death)
 	HookEvent("player_spawn", Event_Spawn)
-	equiparr = CreateArray(32);
+	equiparr = CreateArray(32)
 	
 	if (LibraryExists("updater"))
     {
@@ -89,7 +89,7 @@ public Action:OnPlayerRunCmd(client, &Buttons, &impulse, Float:vel[3], Float:ang
 			{
 				RapidSpawn(client)
 
-}
+			}
 		}
 	}	
 	return Plugin_Continue
@@ -134,25 +134,26 @@ Hyperspawn(client)
 		new Float:origin[3]
 		GetEntPropVector(target, Prop_Send, "m_vecOrigin", origin)
 		TeleportEntity(client, origin, NULL_VECTOR, NULL_VECTOR)
-		findent(MaxClients+1,"info_player_equip");
-		for (int j; j<GetArraySize(equiparr); j++)
+		findent(MaxClients+1, "info_player_equip")
+		for (int j; j < GetArraySize(equiparr); j++)
 		{
 			int jtmp = GetArrayCell(equiparr, j);
-			if (IsValidEntity(jtmp))
-				AcceptEntityInput(jtmp,"EquipPlayer",client);
+			if (IsValidEntity(jtmp)) {
+				AcceptEntityInput(jtmp, "EquipPlayer", client)
+			}
 		}
-		ClearArray(equiparr);
+		ClearArray(equiparr)
 	}
 	return
 }
 
 findent(int ent, char[] clsname)
 {
-	int thisent = FindEntityByClassname(ent,clsname);
+	int thisent = FindEntityByClassname(ent, clsname)
 	if ((IsValidEntity(thisent)) && (thisent >= MaxClients+1) && (thisent != -1))
 	{
-		PushArrayCell(equiparr,ent);
-		findent(thisent++,clsname);
+		PushArrayCell(equiparr, ent)
+		findent(thisent++, clsname)
 	}
 }
 
