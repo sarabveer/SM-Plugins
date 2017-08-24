@@ -4,11 +4,11 @@
 	{
 		"Version"
 		{
-			"Latest"	"1.9.3"
+			"Latest"	"1.9.4"
 		}
 		
-		"Notes"	"More info @ github.com/Sarabveer/SM-Plugins. Changes in 1.9.3:"
-		"Notes"	"Recompiled with SM1.9-dev+5921"
+		"Notes"	"More info @ github.com/Sarabveer/SM-Plugins. Changes in 1.9.4:"
+		"Notes"	"Fixed Players Spawning with no Weapons"
 	}
 	
 	"Files"
