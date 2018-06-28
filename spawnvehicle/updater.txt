@@ -8,7 +8,7 @@
 		}
 		
 		"Notes"	"More info @ github.com/Sarabveer/SM-Plugins. Changes in 1.6:"
-		"Notes"	""
+		"Notes"	"Remove sm_fexec dependency, Add Episode 2 Check"
 	}
 	
 	"Files"
