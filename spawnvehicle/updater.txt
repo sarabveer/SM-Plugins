@@ -4,11 +4,11 @@
 	{
 		"Version"
 		{
-			"Latest"	"1.5.4"
+			"Latest"	"1.6"
 		}
 		
-		"Notes"	"More info @ github.com/Sarabveer/SM-Plugins. Changes in 1.5.4:"
-		"Notes"	"Added Jeep_Elite"
+		"Notes"	"More info @ github.com/Sarabveer/SM-Plugins. Changes in 1.6:"
+		"Notes"	""
 	}
 	
 	"Files"
